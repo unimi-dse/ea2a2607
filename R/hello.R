@@ -163,11 +163,58 @@ regmaker3=function(y, x){
 > lm(Tax_R ~ Total_Damage+ Best1price, Datafix)
 reg(Tax_R ~ (Total_Damage + Best1price), Datafix)
 
-regmaker4=function(){
-lm( ~., Datafix,drop.unused.levels = FALSE)
-}
+
+
+regmaker4=function(n){
+ model=lm(n ~.- n, Datafix)
+summary (model)
+anova(model)}
+
+regmakerTax=function(){
+  model=lm(Tax_R ~.-Tax_R, Datafix)
+  summary (model)
+  anova(model)}
+
+
 
 all_vars()
+
+regmaker5=function(){
+  reg_list=list("Models_results")
+  for (i in colnames(Datafix))
+    {
+    Datafix=as.data.frame(Datafix)
+    x= Datafix[,i] ~. -Datafix[,i]
+    model=lm(Datafix[,i] ~. -Datafix[,i], Datafix)
+    #summary(model)
+    #anova(model)
+     #options(warn=0)
+    d=list(suppressWarnings(summary(model)))
+    print(d)
+    b=list(suppressWarnings(anova(model)))
+    #print(b)
+    reg_list[[i]] = model#,d,b #lm(my_formula, data = data)
+    list.append(reg_list,d)
+    list.append(reg_list,b)
+    #list.append(Petardo,d,b)
+    }
+  return(reg_list)
+}
+vars = c('a', 'b', 'c', 'd')
+
+reg_list = list()
+varss= colnames(Datafix)
+for (i in seq_along(varss))
+  # for (i in colnames(Datafix)) is better
+  {
+  my_formula = as.formula(sprintf('Y ~ %s', paste(vars[1:i], collapse = " + ")))
+  reg_list[[i]] = lm(my_formula, data = data)
+
+}
+
+summary(reg_list[[i]])
+
+
 
 
 
