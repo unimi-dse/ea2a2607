@@ -1,7 +1,6 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
+
+
+
 #
 # You can learn more about package authoring with RStudio at:
 #
@@ -23,68 +22,10 @@ library(roxygen2)
 require(Hmisc)
 require(foreach)
 require(lessR)
-hello <- function() {
-  print("Hello, world!")
-}
-
-#dataset_df<-read.csv(system.file("extdata", "Tesla top 5.csv", package="teslasales"),sep=",")
 
 
-LoadData <- function(){
-  #E=new.env()
-  Data4Exam<-read.csv("ThData4Exam.csv", stringsAsFactors = FALSE)
-  Data4Exam$X <- NULL
-  View(Data4Exam)
-  Data4exam <- list(Data4Exam)
-  return(Data4Exam)
-}
-#programmare una main Data4Exam=LoadData()
-#Data4Exam <-as.data.frame(Data4Exam)
-#Data4Exam <- data.frame(ThData4Exam, stringsAsFactors = FALSE)
-#View(Data4Exam)
 
-Organize = function(){
-by_Timess <- Data4Exam %>% group_by(Times)
- DatasetEx = by_Timess %>% summarise_all(mean)
-Pricess <- data.frame(DatasetEx$Times,DatasetEx$Best1price, DatasetEx$Best2price, DatasetEx$Best3price, DatasetEx$Best4price, DatasetEx$Best5price, DatasetEx$Worst1price,DatasetEx$Worst2price,DatasetEx$Worst3price,DatasetEx$Worst4price, DatasetEx$Worst5price, stringsAsFactors = FALSE)
-Tot_Rev <- data.frame(DatasetEx$Times,DatasetEx$Best1Tot_Rev, DatasetEx$Best2Tot_Rev, DatasetEx$Best3Tot_Rev, DatasetEx$Best4Tot_Rev, DatasetEx$Best5Tot_Rev, DatasetEx$Worst1Tot_Rev,DatasetEx$Worst2Tot_Rev,DatasetEx$Worst3Tot_Rev,DatasetEx$Worst4Tot_Rev, DatasetEx$Worst5Tot_Rev, stringsAsFactors = FALSE)
- Market_shares = data.frame(DatasetEx$Times,DatasetEx$Best1Market_shares, DatasetEx$Best2Market_shares, DatasetEx$Best3Market_shares, DatasetEx$Best4Market_shares, DatasetEx$Best5Market_shares, DatasetEx$Worst1Market_shares,DatasetEx$Worst2Market_shares,DatasetEx$Worst3Market_shares,DatasetEx$Worst4Market_shares, DatasetEx$Worst5Market_shares, stringsAsFactors = FALSE)
- Cartel_Market_shares = data.frame(DatasetEx$Times,DatasetEx$Best1Cartel_market_shares, DatasetEx$Best2Cartel_market_shares, DatasetEx$Best3Cartel_market_shares, DatasetEx$Best4Cartel_market_shares, DatasetEx$Best5Cartel_market_shares, DatasetEx$Worst1Cartel_market_shares,DatasetEx$Worst2Cartel_market_shares,DatasetEx$Worst3Cartel_market_shares,DatasetEx$Worst4Cartel_market_shares, DatasetEx$Worst5Cartel_market_shares, stringsAsFactors = FALSE)
- return(list(DatasetEx,Pricess, Tot_Rev,Market_shares,Cartel_Market_shares)  )}
-
-# Org.group=Organize() Org.group[[1]], Org.group[[2]] Org.group[[3]] Org.group[[4]] Org.group[[5]]
-# Vargroup$2 Vargroup$3 Vargroup$4 Vargroup$5 Org.group[[3]]
-
-Plot.group.num = function(TP=NULL, TR=NULL, Mrk_shares=NULL, C_Mrk_shares=NULL){
-
-   if(!is.null(TP))
-
-  {TP <- melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
- dfp <- melt(df ,  id.vars = 'Time', variable.name = 'Prce series')
- ggplot(TP, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-
-   if(TR)
-
-{TR <- melt(Org.group[[3]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
- dft <- melt(df ,  id.vars = 'Times', variable.name = 'series')
- ggplot(TR, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-
-
-  if(!is.null(Mrk_shares))
-
- {Mrk_shares <- melt(Org.group[[4]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
- dfs <- melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
- ggplot(Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-
-
- if(!is.null(C_Mrk_shares))
-
- {C_Mrk_shares <- melt( Org.group[[5]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
- dfcs <- melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
- ggplot(C_Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-}
-
-Plot.group.num = function(n){
+Plot.group = function(n){
 
   if(n==1)
 
@@ -118,74 +59,13 @@ Plot.group.num = function(n){
 }
 
 
-#areg(Org.group[[2]]$DatasetEx.Best1price,Org.group[[2]]$DatasetEx.Worst1price)
-Regmaker = function(n){
-  for(i in n)
- areg(Org.group[[n]]$i,Org.group[[n]]$i)
-          }
-Regmaker2=function(){
-  lapply(Org.group, FUN= areg(Org.group[[2]]$DatasetEx.Best1price))
-}
-
-
-Plot.Price = function(){
-
-  TP <- melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dfp <- melt(df ,  id.vars = 'Time', variable.name = 'Prce series')
-  ggplot(TP, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-
-Plot.Rev = function(){
-
-  TR <- melt(Org.group[[3]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dft <- melt(df ,  id.vars = 'Times', variable.name = 'series')
-  ggplot(TR, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-
-Plot.Mrk.sh = function(){
-
-
-  Mrk_shares <- melt(Org.group[[4]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dfs <- melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  ggplot(Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-
-
-Plot.C.Mrk = function(){
-
-
-  C_Mrk_shares <- melt( Org.group[[5]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dfcs <- melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  ggplot(C_Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
-
-
-regmaker3=function(y, x){
-  reg(y ~ x, Org.group)
-  }
- #anova()
-> lm(Tax_R ~ Total_Damage+ Best1price, Datafix)
-reg(Tax_R ~ (Total_Damage + Best1price), Datafix)
-
-
-
-regmaker4=function(n){
- model=lm(n ~.- n, Datafix)
-summary (model)
-anova(model)}
-
-regmakerTax=function(){
-  model=lm(Tax_R ~.-Tax_R, Datafix)
-  summary (model)
-  anova(model)}
-
-
-
-all_vars()
-
-regmaker5=function(){
+Regmaker=function(){
   reg_list=list("Models_results")
-  for (i in colnames(Datafix))
+  for (i in colnames(DatasetEx))
     {
-    Datafix=as.data.frame(Datafix)
-    x= Datafix[,i] ~. -Datafix[,i]
-    model=lm(Datafix[,i] ~. -Datafix[,i], Datafix)
+    DatasetEx=as.data.frame(DatasetEx)
+    x= DatasetEx[,i] ~. -DatasetEx[,i]
+    model=lm(DatasetEx[,i] ~. -DatasetEx[,i], DatasetEx)
     #summary(model)
     #anova(model)
      #options(warn=0)
@@ -200,20 +80,7 @@ regmaker5=function(){
     }
   return(reg_list)
 }
-vars = c('a', 'b', 'c', 'd')
 
-reg_list = list()
-varss= colnames(Datafix)
-for (i in seq_along(varss))
-  # for (i in colnames(Datafix)) is better
-  {
-  my_formula = as.formula(sprintf('Y ~ %s', paste(vars[1:i], collapse = " + ")))
-  reg_list[[i]] = lm(my_formula, data = data)
-
-}
-
-summary(reg_list[[i]])
-usethis::use_data(Data4Exam)
 
 
 
