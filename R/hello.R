@@ -22,7 +22,7 @@ library(roxygen2)
 require(Hmisc)
 require(foreach)
 require(lessR)
-
+require(rlist)
 
 
 Plot.group = function(n){
