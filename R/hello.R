@@ -13,14 +13,16 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-#cose
+
 require(tidyr)
 library(reshape2)
 library(ggplot2)
 library(dplyr)
 library(devtools)
 library(roxygen2)
-
+require(Hmisc)
+require(foreach)
+require(lessR)
 hello <- function() {
   print("Hello, world!")
 }
@@ -117,8 +119,12 @@ Plot.group.num = function(n){
 
 
 #areg(Org.group[[2]]$DatasetEx.Best1price,Org.group[[2]]$DatasetEx.Worst1price)
-Regmaker = function(){
-
+Regmaker = function(n){
+  for(i in n)
+ areg(Org.group[[n]]$i,Org.group[[n]]$i)
+          }
+Regmaker2=function(){
+  lapply(Org.group, FUN= areg(Org.group[[2]]$DatasetEx.Best1price))
 }
 
 
@@ -150,13 +156,18 @@ Plot.C.Mrk = function(){
   ggplot(C_Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))}
 
 
+regmaker3=function(y, x){
+  reg(y ~ x, Org.group)
+  }
+ #anova()
+> lm(Tax_R ~ Total_Damage+ Best1price, Datafix)
+reg(Tax_R ~ (Total_Damage + Best1price), Datafix)
 
+regmaker4=function(){
+lm( ~., Datafix,drop.unused.levels = FALSE)
+}
 
-
-
-
-
-
+all_vars()
 
 
 
