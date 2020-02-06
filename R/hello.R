@@ -22,11 +22,11 @@ library(roxygen2)
 require(Hmisc)
 require(foreach)
 require(lessR)
-
+require(rlist)
 
 
 Plot.group = function(n){
-
+  load(file = "Org.group.rda")
   if(n==1)
 
   {TP <- melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
@@ -60,6 +60,7 @@ Plot.group = function(n){
 
 
 Regmaker=function(){
+  load(file = "DasetEX.rda")
   reg_list=list("Models_results")
   for (i in colnames(DatasetEx))
     {
