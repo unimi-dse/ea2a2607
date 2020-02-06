@@ -213,7 +213,7 @@ for (i in seq_along(varss))
 }
 
 summary(reg_list[[i]])
-
+usethis::use_data(Data4Exam)
 
 
 
