@@ -13,14 +13,14 @@ Plot.group = function(n){
 
   {TP <- reshape2::melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
   dfp <- reshape2::melt(df ,  id.vars = 'Time', variable.name = 'Prce series')
-   graph1 =ggplot2::ggplot(TP, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+   graph1 =ggplot2::ggplot(TP,ggplot2::aes(DatasetEx.Times,value)) + ggplot2::geom_line(ggplot2::aes(colour = series))
    return(graph1)}
 
   if(n==2)
 
   {TR <-reshape2::melt(Org.group[[3]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
   dft <-reshape2::melt(df ,  id.vars = 'Times', variable.name = 'series')
-  graph1 =ggplot2::ggplot(TR, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+  graph1 =ggplot2::ggplot(TR,ggplot2::aes(DatasetEx.Times,value)) + ggplot2::geom_line(ggplot2::aes(colour = series))
   return(graph1)}
 
 
@@ -28,7 +28,7 @@ Plot.group = function(n){
 
   {Mrk_shares <-reshape2::melt(Org.group[[4]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
   dfs <-reshape2::melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  graph1 =ggplot2::ggplot(Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+  graph1 =ggplot2::ggplot(Mrk_shares,ggplot2::aes(DatasetEx.Times,value)) + ggplot2::geom_line(ggplot2::aes(colour = series))
   return(graph1)}
 
 
@@ -36,7 +36,7 @@ Plot.group = function(n){
 
   {C_Mrk_shares <-reshape2::melt( Org.group[[5]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
   dfcs <-reshape2::melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  graph1=ggplot2::ggplot(C_Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+  graph1=ggplot2::ggplot(C_Mrk_shares,ggplot2::aes(DatasetEx.Times,value)) + ggplot2::geom_line(ggplot2::aes(colour = series))
   return(graph1)}
 }
 
@@ -56,7 +56,6 @@ Regmaker=function(){
     reg_list[[i]] = model
     rlist::list.append(reg_list,d)
     rlist::list.append(reg_list,b)
-
     }
   save(reg_list, file="Results.rda")
   return(View(reg_list, "Results"))
