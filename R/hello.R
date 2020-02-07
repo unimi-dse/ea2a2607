@@ -4,9 +4,20 @@
 
 
 
+#'Plot.group
+#'
+#'Return a linear plot of all 10 observed agent group according to n.
+#'
+#'@param n (1:4) 1 for grouping according to price variables, 2 revenues, 3 market share, 4 cartel's market share
+#'
+#' @example
+#' \dontrun{
+#' Plot.group(1)
+#' }
+#'
+#' @export
+#'
 
-#insert value from 1 to 4 1 plot observed prices among the agents, 2 Revenues, 3 Market share, 4 Cartel's market share
-#Plot.group(n), n values->(1:4) 1 plot the observed prices, 2 the revenues, 3 market share and 4 Cartel's market share
 
 Plot.group = function(n){
   Org.group=ManaSimul::Org.group
@@ -42,7 +53,20 @@ Plot.group = function(n){
   return(graph1)}
 }
 
-#Regmaker() automatically compound all the possible multilinear regression, with anova, using all variables present in the dataset and gives back a rda file composed of all the information necessary organize
+#'Regmaker
+#'
+#'This function automatically compound all the possible multilinear regression, with anova, using all variables present in the dataset and
+#' gives back a rda file composed of all the information necessary organize
+#'
+#' ' @examples
+#' \dontrun{
+#'  Regmaker()
+#' }
+#'
+#' @export
+#'
+
+
 Regmaker=function(){
   DatasetEx = ManaSimul::DatasetEx
   reg_list=list("Models_results")
