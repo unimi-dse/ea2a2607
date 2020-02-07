@@ -25,6 +25,10 @@ require(lessR)
 require(rlist)
 require(marray)
 
+
+
+#insert value from 1 to 4 1 plot observed prices among the agents, 2 Revenues, 3 Market share, 4 Cartel's market share
+
 Plot.group = function(n){
   "Org.group.rda"
   if(n==1)
