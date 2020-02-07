@@ -23,7 +23,7 @@ require(Hmisc)
 require(foreach)
 require(lessR)
 require(rlist)
-
+require(marray)
 
 Plot.group = function(n){
   "Org.group.rda"
@@ -60,7 +60,7 @@ Plot.group = function(n){
 
 
 Regmaker=function(){
-  "DasetEX.rda"
+  "DasetEX"
   reg_list=list("Models_results")
   for (i in colnames(DatasetEx))
     {
@@ -79,7 +79,13 @@ Regmaker=function(){
     list.append(reg_list,b)
     #list.append(Petardo,d,b)
     }
-  return(reg_list)
+  save(reg_list, file="Results.rda")
+  return(#Results=
+    #save(reg_list, file="Results")
+    #lapply( reg_list, cat,"\n", file="Results.txt", append=TRUE
+     #write.list(reg_list, filename = "Results", #append = FALSE, closefile = TRUE, Results
+
+  View(reg_list, "Results"))
 }
 
 
