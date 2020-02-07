@@ -11,32 +11,32 @@ Plot.group = function(n){
   "Org.group.rda"
   if(n==1)
 
-  {TP <- melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dfp <- melt(df ,  id.vars = 'Time', variable.name = 'Prce series')
-   graph1 = ggplot(TP, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+  {TP <- reshape2::melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
+  dfp <- reshape2::melt(df ,  id.vars = 'Time', variable.name = 'Prce series')
+   graph1 =ggplot2::ggplot(TP, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
    return(graph1)}
 
   if(n==2)
 
-  {TR <- melt(Org.group[[3]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dft <- melt(df ,  id.vars = 'Times', variable.name = 'series')
-  graph1 = ggplot(TR, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+  {TR <-reshape2::melt(Org.group[[3]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
+  dft <-reshape2::melt(df ,  id.vars = 'Times', variable.name = 'series')
+  graph1 =ggplot2::ggplot(TR, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
   return(graph1)}
 
 
   if(n==3)
 
-  {Mrk_shares <- melt(Org.group[[4]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dfs <- melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  graph1 = ggplot(Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+  {Mrk_shares <-reshape2::melt(Org.group[[4]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
+  dfs <-reshape2::melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
+  graph1 =ggplot2::ggplot(Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
   return(graph1)}
 
 
   if(n==4)
 
-  {C_Mrk_shares <- melt( Org.group[[5]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dfcs <- melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
-  graph1=ggplot(C_Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
+  {C_Mrk_shares <-reshape2::melt( Org.group[[5]] ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
+  dfcs <-reshape2::melt(df ,  id.vars = 'DatasetEx.Times', variable.name = 'series')
+  graph1=ggplot2::ggplot(C_Mrk_shares, aes(DatasetEx.Times,value)) + geom_line(aes(colour = series))
   return(graph1)}
 }
 
@@ -54,8 +54,8 @@ Regmaker=function(){
     b=list(suppressWarnings(anova(model)))
     print(b)
     reg_list[[i]] = model
-    list.append(reg_list,d)
-    list.append(reg_list,b)
+    rlist::list.append(reg_list,d)
+    rlist::list.append(reg_list,b)
 
     }
   save(reg_list, file="Results.rda")
