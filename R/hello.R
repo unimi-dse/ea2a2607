@@ -40,7 +40,7 @@ Plot.group = function(n){
   return(graph1)}
 }
 
-
+#Regmaker() automatically compound all the possible multilinear regression, with anova, using all variables present in the dataset and gives back a rda file composed of all the information necessary organize
 Regmaker=function(){
   "DasetEX"
   reg_list=list("Models_results")
