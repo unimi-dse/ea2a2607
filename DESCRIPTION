@@ -5,8 +5,7 @@ Version: 0.1.0
 Author: Gianluca Lo Vecchio
 Maintainer: The package maintainer <gianluca.lovecchio@studenti.unimi.it>
 Description:  Data from a simulated market with Netlogo, as CSV files, are used. 
-Four variables (price, revenues, market shares, cartel's market shares) for the best 5 firms and the worst 5 firms are plot and analyzed using multiregression
-since collusive behavior makes for direct and interdepence relationship between firms. 
+Four variables(price, revenues, market shares, cartel's market shares) for the best 5 firms and the worst 5 firms are plot and analyzed using multiregression.
 License: None
 Encoding: UTF-8
 LazyData: true
