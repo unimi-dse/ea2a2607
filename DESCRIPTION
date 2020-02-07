@@ -2,10 +2,10 @@ Package: ManaSimul
 Type: Package
 Title: Plot and organized simulated Data
 Version: 0.1.0
-Author: Gianluca Lo Vecchio
-Maintainer: The package maintainer <gianluca.lovecchio@studenti.unimi.it>
-Description:  Data from a simulated market with Netlogo, as CSV files, are used. Four variables(price, revenues, market shares, cartel's market shares) for the best 5 firms and the worst 5 firms are plot and analyzed using multiregression.
-License: None
+Authors@R: person("Gianluca", "Lo Vecchio", email = "gianluca.lovecchio@studenti.unimi.it",
+                  role = c("aut", "cre"))
+Description:  Data from a simulated market with Netlogo, as CSV files, are used.    Four variables(price, revenues, market shares, cartel's market shares) for the best 5 firms and the worst 5 firms are plot and analyzed using multiregression.
+License: CCO
 Encoding: UTF-8
 LazyData: true
 Imports: tidyr,reshape2,ggplot2,dplyr,devtools,roxygen2,Hmisc,lessR, rlist

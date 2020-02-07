@@ -9,7 +9,8 @@
 #Plot.group(n), n values->(1:4) 1 plot the observed prices, 2 the revenues, 3 market share and 4 Cartel's market share
 
 Plot.group = function(n){
-  "Org.group.rda"
+  Org.group=ManaSimul::Org.group
+  #"Org.group.rda"
   if(n==1)
 
   {TP <- reshape2::melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
@@ -43,7 +44,7 @@ Plot.group = function(n){
 
 #Regmaker() automatically compound all the possible multilinear regression, with anova, using all variables present in the dataset and gives back a rda file composed of all the information necessary organize
 Regmaker=function(){
-  "DasetEX"
+  DatasetEx = ManaSimul::DatasetEx
   reg_list=list("Models_results")
   for (i in colnames(DatasetEx))
     {
