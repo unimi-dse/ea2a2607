@@ -1,8 +1,4 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
+
 # ea2a2607
 <h1 align="leftr">ManaSimul Package </h1> 
 
