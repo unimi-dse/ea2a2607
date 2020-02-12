@@ -25,6 +25,7 @@ Return a linear plot of all 10 observed agent group according to n.
 \examples{
 \dontrun{
 Plot.group(1)
+
 Plot.group(4)
 }
 }
