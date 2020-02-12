@@ -9,6 +9,15 @@ Plot.group(n)
 \arguments{
 \item{n}{(1:4) 1 for grouping according to price variables, 2 revenues, 3 market share, 4 cartel's market share}
 }
+\value{
+Graph
+\describe{
+  \item{Graph1}{GitHub repo id}
+  \item{Graph1}{Name of the package}
+  \item{Graph1}{PASS or FAIL}
+   \item{Graph1}{PASS or FAIL}
+}
+}
 \description{
 Return a linear plot of all 10 observed agent group according to n.
 }
