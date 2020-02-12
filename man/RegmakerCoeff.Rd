@@ -20,5 +20,4 @@ gives back a rda file composed of all the information necessary organize
 \dontrun{
 RegmakerCoeff()
 }
-
 }

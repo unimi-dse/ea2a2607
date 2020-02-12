@@ -26,7 +26,6 @@
 #' Plot.group(1)
 #' Plot.group(4)
 #' }
-#'
 #' @export
 
 
@@ -54,7 +53,6 @@ Plot.group = function(n){
 #' \dontrun{
 #' RegmakerCoeff()
 #' }
-#'
 #' @export
 
 

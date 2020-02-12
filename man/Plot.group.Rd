@@ -27,5 +27,4 @@ Return a linear plot of all 10 observed agent group according to n.
 Plot.group(1)
 Plot.group(4)
 }
-
 }
