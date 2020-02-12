@@ -3,7 +3,7 @@
 <h1 align="leftr">ManaSimul Package </h1> 
 
 This package was created for the exam _Coding for Data Science and Data Management_, R module (2019/2020), Msc.Data Science and Economics, University of Milan.
-The idea it behind is managing simulated data produced by Netlogo, plotting groups of observed variables and run all possible combination fo multilinear regression, thus extimating coefficient. 
+The idea behind it is managing simulated data produced by Netlogo, plotting groups of observed variables and run all possible combination of multilinear regression, thus extimating coefficient. 
 
 ## Installation
 
@@ -14,7 +14,7 @@ devtools::install_github('unimi-dse/ea2a2607')
 
 ## Dataset
 
-The package provides a dataset containing 44 Variables,  global vars for Times, fine based Tax revenue, Total damage caused by cartel and 4 variables (Price, Revenues, Market share and Cartel's Market share) for the best 5 firms and the worst 5 firms.  
+The package provides a dataset containing 44 Variables,  global vars for Times, fine based Tax revenue, Total damage caused by cartels and 4 variables (Price, Revenues, Market share and Cartel's Market share) for each of the best 5 firms and the worst 5 firms.  
 
 ```R
 View(ManaSimul::Data4Exam)
@@ -29,7 +29,7 @@ require(ManaSimul)
 
 ### Plot.group(n)
 
-The function `Plot.group(n)` give the possibilty to plot by group the avalaible data accordingly:
+The function `Plot.group(n)` give the possibilty to plot by group the available data accordingly:
 ```R
  Plot.group(1) Plot the price data from both top 5 firms and bottom 5 firms 
  Plot.group(2) Plot the revenues data from both top 5 firms and bottom 5 firms

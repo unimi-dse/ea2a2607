@@ -25,7 +25,7 @@ Plot.group = function(n){
   if(n==1)
 
   {TP <- reshape2::melt(Org.group[[2]] , id.vars = 'DatasetEx.Times', variable.name = 'series')
-  dfp <- reshape2::melt(df ,  id.vars = 'Time', variable.name = 'Prce series')
+  dfp <- reshape2::melt(df ,  id.vars = 'Time', variable.name = 'series')
    graph1 =ggplot2::ggplot(TP,ggplot2::aes(DatasetEx.Times,value)) + ggplot2::geom_line(ggplot2::aes(colour = series))
    return(graph1)}
 
