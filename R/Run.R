@@ -87,5 +87,5 @@ RegmakerCoeff=function(){
   rownames(coeff_frame)= Onion
   VCL= c("Intercepts",colnames(DatasetEx))
   colnames(coeff_frame) = VCL
-  return(View(coeff_frame))
+  return(coeff_frame)
 }
