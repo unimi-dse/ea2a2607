@@ -21,9 +21,10 @@
 #'    \item{Cartel's market share}{Variable used on the y-axis if n=4 Cartel's market share of the 10 observed firms}
 #'    }
 #'
-#' @example
+#' @examples
 #' \dontrun{
 #' Plot.group(1)
+#' Plot.group(4)
 #' }
 #'
 #' @export
@@ -42,18 +43,20 @@ Plot.group = function(n){
 #'
 #'This function automatically compound all the possible multilinear regression, with anova, using all variables present in the dataset and
 #' gives back a rda file composed of all the information necessary organize
+#'
+#'
 #'@return data.frame
 #' \describe{
 #'   \item{Coeff_frame}{The output is a data.frame composed of all the coefficients and their relative P-values organize. }
 #'    }
 #'
-#' @example
+#' @examples
 #' \dontrun{
-#' Regmaker()
+#' RegmakerCoeff()
 #' }
 #'
 #' @export
-#'
+
 
 
 
