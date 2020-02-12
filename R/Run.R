@@ -58,7 +58,7 @@ Plot.group = function(n){
 #'This function automatically compound all the possible multilinear regression, with anova, using all variables present in the dataset and
 #' gives back a rda file composed of all the information necessary organize
 #'
-#'  @examples
+#' @example
 #' \dontrun{
 #' Regmaker()
 #' }
