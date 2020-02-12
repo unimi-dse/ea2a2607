@@ -10,13 +10,14 @@ Plot.group(n)
 \item{n}{(1:4) 1 for grouping according to price variables, 2 revenues, 3 market share, 4 cartel's market share}
 }
 \value{
-Graph
+Plot
 \describe{
-  \item{Graph1}{GitHub repo id}
-  \item{Graph1}{Name of the package}
-  \item{Graph1}{PASS or FAIL}
-   \item{Graph1}{PASS or FAIL}
-}
+  \item{Time}{Variable always used on the x-axis }
+  \item{Price series}{Variable used on the y-axis if n=1, prices of the 10 observed firms}
+  \item{Revenues series}{Variable used on the y-axis if n=2 Revenues of the 10 observed firms}
+   \item{Market quotas}{Variable used on the y-axis if n=3 Market share of the 10 observed firms}
+   \item{Cartel's market share}{Variable used on the y-axis if n=4 Cartel's market share of the 10 observed firms}
+   }
 }
 \description{
 Return a linear plot of all 10 observed agent group according to n.
