@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 #'Plot.group
 #'
 #'Return a linear plot of all 10 observed agent group according to n.
@@ -24,10 +16,10 @@
 #' @examples
 #' \dontrun{
 #' Plot.group(1)
+#'
 #' Plot.group(4)
 #' }
 #' @export
-
 
 Plot.group = function(n){
   Org.group=ManaSimul::Org.group
@@ -54,10 +46,6 @@ Plot.group = function(n){
 #' RegmakerCoeff()
 #' }
 #' @export
-
-
-
-
 
 RegmakerCoeff=function(){
   DatasetEx = ManaSimul::DatasetEx
