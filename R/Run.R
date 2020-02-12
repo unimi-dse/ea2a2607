@@ -60,12 +60,11 @@ Plot.group = function(n){
 #'
 #'  @examples
 #' \dontrun{
-#'  Regmaker()
+#' Regmaker()
 #' }
 #'
 #' @export
 #'
-
 
 Regmaker=function(){
   DatasetEx = ManaSimul::DatasetEx

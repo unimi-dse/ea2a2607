@@ -17,14 +17,14 @@ devtools::install_github('unimi-dse/ea2a2607')
 The package provides a dataset containing 44 Variables,  global vars for Times, fine based Tax revenue, Total damage caused by cartel and 4 variables (Price, Revenues, Market share and Cartel's Market share) for the best 5 firms and the worst 5 firms.  
 
 ```R
-View(ManuSimul::Data4Exam)
+View(ManaSimul::Data4Exam)
 ```
 
 ## Usage
 
 ```R
 # load the package
-require(ManuSimul)
+require(ManaSimul)
 ```
 
 ### Plot.group(n)
