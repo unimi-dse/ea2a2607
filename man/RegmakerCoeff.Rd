@@ -17,7 +17,7 @@ This function automatically compound all the possible multilinear regression, wi
 gives back a rda file composed of all the information necessary organize
 }
 \examples{
-\dontrun{
+
 RegmakerCoeff()
-}
+
 }

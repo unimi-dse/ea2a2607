@@ -14,11 +14,11 @@
 #'    }
 #'
 #' @examples
-#' \dontrun{
+#'
 #' Plot.group(1)
 #'
 #' Plot.group(4)
-#' }
+#'
 #' @export
 
 Plot.group = function(n){
@@ -42,9 +42,9 @@ Plot.group = function(n){
 #'    }
 #'
 #' @examples
-#' \dontrun{
+#'
 #' RegmakerCoeff()
-#' }
+#'
 #' @export
 
 RegmakerCoeff=function(){
@@ -76,5 +76,5 @@ RegmakerCoeff=function(){
   rownames(coeff_frame)= Onion
   VCL= c("Intercepts",colnames(DatasetEx))
   colnames(coeff_frame) = VCL
-  return(coeff_frame)
+  return(View(coeff_frame))
 }
