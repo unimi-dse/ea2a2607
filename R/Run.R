@@ -60,20 +60,20 @@ RegmakerCoeff=function(){
     coeff_frame=rbind(coeff_frame,P_s)
     }
   x = 0
-  Onion = NULL
+  Nomification = NULL
 
   repeat
   { a = lessR::to("Coeff", x ,from = x, same.size = TRUE )
   e = lessR::to("P-value", x,from = x, same.size = TRUE)
-  Onion =append(Onion,a)
-  Onion =append(Onion,e)
+  Nomification =append(Nomification,a)
+  Nomification =append(Nomification,e)
   x = x + 1
   if (x==44){
     break
   }
   }
 
-  rownames(coeff_frame)= Onion
+  rownames(coeff_frame)= Nomification
   VCL= c("Intercepts",colnames(DatasetEx))
   colnames(coeff_frame) = VCL
   return(coeff_frame)
