@@ -45,8 +45,4 @@ The function `Plot.group(n)` give the possibilty to plot by group the available 
 RegmakerCoeff()
 ```
 
-The function `RegmakerCoeff()` returns a data frame, inside this data fram all coefficients and relative p-values all are organize model per model.
-
-```R{r load Coeff_frame, include=FALSE}
-load("Coeff_frame.RData")
-
+The function `RegmakerCoeff()` returns a data frame, inside this data fram all coefficients and relative p-values all are organize.
