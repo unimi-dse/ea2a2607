@@ -3,7 +3,7 @@
 <h1 align="leftr">ManaSimul Package </h1> 
 
 This package was created for the exam _Coding for Data Science and Data Management_, R module (2019/2020), Msc.Data Science and Economics, University of Milan.
-The idea behind it is managing simulated data produced by Netlogo, plotting groups of observed variables and run all possible combination of multilinear regression, thus extimating coefficient. 
+The idea behind it is managing simulated data produced by Netlogo, plotting groups of observed variables and run all possible combination of multilinear regression, thus extimating coefficient and P-values.
 
 ## Installation
 
@@ -45,4 +45,4 @@ The function `Plot.group(n)` give the possibilty to plot by group the available 
 RegmakerCoeff()
 ```
 
-The function `RegmakerCoeff()` returns a data frame, inside this data fram all coefficients and relative p-values all are organize.
+The function `RegmakerCoeff()` returns a data frame, inside this data frame all coefficients and relative p-values are organize.
