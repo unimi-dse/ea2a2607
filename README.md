@@ -38,14 +38,14 @@ The function `Plot.group(n)` give the possibilty to plot by group the available 
 ```
 
 
-### Regmaker()
+### RegmakerCoeff()
 
 
 ```R
-Regmaker()
+RegmakerCoeff()
 ```
 
-The function `Regmaker()` returns a nested list, inside this list of lists all the data from all possible multilinear regression are organize model by model.
+The function `RegmakerCoeff()` returns a data frame, inside this data fram all coefficients and relative p-values all are organize model per model.
 
 
 
