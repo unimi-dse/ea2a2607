@@ -76,5 +76,6 @@ RegmakerCoeff=function(){
   rownames(coeff_frame)= Nomification
   VCL= c("Intercepts",colnames(DatasetEx))
   colnames(coeff_frame) = VCL
+  save(coeff_frame, file="coeff_frame.RData")
   return(coeff_frame)
 }
