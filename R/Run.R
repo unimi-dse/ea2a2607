@@ -49,6 +49,7 @@ Plot.group = function(n){
 
 RegmakerCoeff=function(){
   DatasetEx = ManaSimul::DatasetEx
+  DatasetEx$Timess= NULL
   coeff_frame= data.frame(stringsAsFactors = FALSE)
    for (i in colnames(DatasetEx))
   {
@@ -68,7 +69,7 @@ RegmakerCoeff=function(){
   Nomification =append(Nomification,a)
   Nomification =append(Nomification,e)
   x = x + 1
-  if (x==44){
+  if (x==43){
     break
   }
   }
